@@ -1,0 +1,5 @@
+medida = 
+IFERROR(
+    [Campo1] / [Campo2], 
+    BLANK()
+)

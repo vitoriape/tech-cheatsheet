@@ -1,0 +1,50 @@
+// Critério único com várias possibilidades de filtros
+medida = 
+CALCULATE(
+    SUM ( 'FontedeDados'[ValorTotal] ),
+    'FontedeDados'[Tipo]
+    IN { 
+        "VALOR 1",
+        "VALOR 2",
+        "VALOR 3",
+        "VALOR 4",
+        "VALOR 5" 
+    }
+)
+
+
+// Critérios múltiplos com um filtro cada
+medida = 
+CALCULATE(
+    COUNT ( 'FontedeDados'[ValorTotal] ),
+    AND(
+        'FontedeDados'[Critério1] IN { "VALOR 1" }, 
+        'FontedeDados'[Critério2] IN { "VALOR 2" }
+    )
+)                        
+
+
+// Critérios múltiplos com várias possibilidades de filtros
+medida = 
+CALCULATE(
+    COUNT ( 'FontedeDados'[ValorTotal] ),
+        AND(
+        AND(
+        'FontedeDados'[Critério1]
+        IN { "VALOR 1" },
+        
+        'FontedeDados'[Critério2]
+        IN { "VALOR 2" }
+        ),
+        
+        'FontedeDados'[Critério3]
+        IN { 
+            "VALOR 3",
+            "VALOR 4",
+            "VALOR 5",
+            "VALOR 6",
+            "VALOR 7",
+            "VALOR 8" 
+        }
+    )
+)

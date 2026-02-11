@@ -1,0 +1,12 @@
+medida = 
+CALCULATE(
+    COUNTROWS(
+        BasedeDados
+    ),
+    FILTER(
+        ALLSELECTED(
+               BasedeDados[Campo]
+        ),
+        BasedeDados[Campo] <= MAX ( BasedeDados[Campo] )
+    )
+)

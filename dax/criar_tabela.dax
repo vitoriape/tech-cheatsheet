@@ -1,0 +1,47 @@
+medida = 
+UNION(
+    SELECTCOLUMNS(
+        FILTER(
+            f_tabela_origem,
+            CONTAINSSTRING(f_tabela_origem[cc_sintetico], "BAIRRO HARMONIA COMERCIAL")  
+        ),
+        "id_caixa", "(=) Faturado",
+        "cliente", f_tabela_origem[cliente],
+        "fl_caixa", "(+) Receita",
+        "classificacao", f_tabela_origem[classificacao],
+        "periodo", f_tabela_origem[periodo],
+        "ano", YEAR(f_tabela_origem[vencimento]),
+        "valor", IF(f_tabela_origem[vl_liquido] = 0, f_tabela_origem[vl_bruto], f_tabela_origem[vl_liquido]),
+        "parcela", RIGHT(f_tabela_origem[parcela], LEN(f_tabela_origem[parcela]) - SEARCH("/", f_tabela_origem[parcela], 1)),
+        "lote", f_tabela_origem[unidade],
+        "vencimento", f_tabela_origem[vencimento]
+    ),
+
+    --Colunas extra1
+    ROW(
+        "id_caixa", "(=) Faturado",
+        "cliente", "CIA",
+        "fl_caixa", "(-) Despesa",
+        "classificacao", "Comissão 1",
+        "periodo", "01/25",
+        "ano", "2025",
+        "valor", -775029.14,
+        "parcela", "N/A",
+        "lote", "N/A",
+        "vencimento", 01/01/2025
+    ),
+
+    --Coluna extra2
+    ROW(
+        "id_caixa", "(=) Faturado",
+        "cliente", "Imobs",
+        "fl_caixa", "(-) Despesa",
+        "classificacao", "Comissão 2",
+        "periodo", "01/25",
+        "ano", "2025",
+        "valor", -2298325.78,
+        "parcela", "N/A",
+        "lote", "N/A",
+        "vencimento", 01/01/2025
+    )
+)
