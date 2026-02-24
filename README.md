@@ -1,4 +1,4 @@
-# Tech Cheat Sheet <img src="https://snipboard.io/8BDJOT.jpg" width="10%" height="00%" align="right" valign="middle"/>
+# Tech Cheat Sheet <img src="https://snipboard.io/jlZ9cq.jpg" width="10%" height="00%" align="right" valign="middle"/>
 Multi-language technical reference repository designed to centralize quick, practical examples used in day-to-day development, automation, data, and infrastructure tasks. Works as a hands-on cheat sheet containing ready-to-use snippets, mini-scripts, and learning examples.
 
 <div align="center">
@@ -80,4 +80,5 @@ The goal of this repository is to provide:
 ├── windows/
 │
 └── packet-tracer/
+
 ```
