@@ -1,0 +1,14 @@
+svg_model = 
+VAR Valor1 = [m_valor1]
+VAR Valor2 = [m_valor2]
+VAR LarguraMax = 70
+VAR Perc = DIVIDE(Valor1, Valor2, 0)
+VAR LarguraFill = ROUND(LarguraMax * Perc, 0)
+
+RETURN
+"data:image/svg+xml;utf8," &
+"<svg width='200' height='20' xmlns='http://www.w3.org/2000/svg'>" &
+"<rect x='0' y='11' width='100' height='8' fill='#e0e0e0' rx='3' ry='3'/>" &
+"<rect x='0' y='11' width='" & LarguraFill & "' height='8' fill='#002E66' rx='3' ry='3'/>" &
+"<text x='105' y='18' font-size='18' text-anchor='start' fill='#000' font-family='Segoe UI Semibold'>" &
+FORMAT(Perc, "0%") & " de " & FORMAT(Valor2, "0,,") & " Mi" & "</text>" & "</svg>"
