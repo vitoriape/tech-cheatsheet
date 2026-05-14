@@ -12,6 +12,7 @@ Multi-language technical reference repository designed to centralize quick, prac
 ![sql](https://img.shields.io/badge/SQL-.sql-lightgrey.svg)
 ![vba](https://img.shields.io/badge/VBA-.bas-brightgreen.svg)
 ![windows](https://img.shields.io/badge/Windows-.bat-purple.svg)
+![airflow](https://img.shields.io/badge/Airflow-.sh-blue.svg)
 
 </div>
 
